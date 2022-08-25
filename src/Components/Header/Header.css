@@ -1,0 +1,49 @@
+.header-component {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+    justify-content: space-around;
+    padding-top: 30px;
+    flex-wrap: nowrap;
+}
+
+.header-logo {
+    color: red;
+    font-size: 30px;
+}
+
+.header-input>input {
+    width: 598px;
+    padding: 10px 40px 10px 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: all ease 0.3s;
+    font-size: 14px;
+    color: #333;
+    background-color: #f3f3f3;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    height: 50px;
+}
+
+.header-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.header-buttons>div {
+    margin: 15px;
+    width: 90px;
+    height: 45px;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.header-buttons>div:hover {
+    color: rgb(19, 121, 19);
+}
