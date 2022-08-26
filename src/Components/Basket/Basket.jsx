@@ -28,6 +28,20 @@ const Basket = () => {
       }
 
 
+      if (basket.length === 0) {
+
+        return(
+          <>
+                      <Header/>   
+
+            <div className='emptyList'> suanda sepetinizde bir urun yok</div>
+          </>
+        )
+
+
+      }
+
+
 
 
   return (

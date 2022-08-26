@@ -51,12 +51,16 @@ function App() {
  
   return (
   <mainContext.Provider value={data}>
+
     <BrowserRouter>
+
       <Routes>
-      
+
+
+        <Route path='/' element={<Home />} />
         <Route index element={<Home/>}/>
         <Route path="favorite" element={<Favorite />}/>
-        <Route path="sepet" element={<Basket />}/>
+        <Route path="sepet"  element={<Basket />}/>
 
 
       </Routes>
