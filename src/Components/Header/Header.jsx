@@ -29,7 +29,7 @@ const Header = () => {
         </div>
 
         <div className="header-buttons">
-           <div className='log-in'><Link to="/"> <span className='bir'><CgProfile/>  Log-in</span>  </Link> </div> 
+           <div className='log-in'><Link to="login"> <span className='bir'><CgProfile/>  Log-in</span>  </Link> </div> 
 
             <div className='favorite'><Link to="favorite"> <span className='iki'><BsHeart/>  Favoriler</span>  </Link> </div>
 

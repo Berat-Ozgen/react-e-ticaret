@@ -6,6 +6,7 @@ import {useState,useEffect} from 'react';
 import axios from 'axios';
 import Favorite from './Components/Favorite/Favorite';
 import Basket from './Components/Basket/Basket';
+import Login from './Components/Login/Login';
 
 function App() {
 
@@ -59,8 +60,11 @@ function App() {
 
         <Route path='/' element={<Home />} />
         <Route index element={<Home/>}/>
-        <Route path="favorite" element={<Favorite />}/>
         <Route path="sepet"  element={<Basket />}/>
+        <Route path="favorite" element={<Favorite />}/>
+        <Route path="login" element={<Login />}/>
+
+        
 
 
       </Routes>
