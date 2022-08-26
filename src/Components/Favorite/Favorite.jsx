@@ -13,14 +13,26 @@ const Favorite = () => {
             setFavoriteList([...favoriteList.filter(item => item.id !== id)])
     }
 
+    console.log(favoriteList.length)
 
+    if(favoriteList.length ===  0) {
+      return (<div>
 
+          <Header/>
+
+          <div className='emptyList'> Şuanda Favoriler Kısmında birşey yok</div>
+     
+
+        </div>)
+    } else {
+
+      
   return (
     <>
         <Header/>
         <div className='favorite-component'>
 
-             {favoriteList?.map(item => (
+             {favoriteList.filter(data => data.name.includes(searchValue))?.map(item => (
                    <div className="favorite-card">
                    <div className="favorite-card-img"><img src={item.img[0]} alt="" /></div>
                    <div className="favorite-card-title">iphone / {item.name}</div>
@@ -36,6 +48,11 @@ const Favorite = () => {
         
     </>
   )
+
+    }
+
+
+
 }
 
 export default Favorite

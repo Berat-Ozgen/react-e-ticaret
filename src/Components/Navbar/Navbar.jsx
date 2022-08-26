@@ -45,7 +45,7 @@ const Navbar = () => {
         <div onClick={()=>{
           setFilterSelect("home-decoration")
           setActive(7)
-        }} className={active === 7 && `active`}>ev dekorasyonu</div>
+        }} className={active === 7 && `active`}>Ev Dekorasyonu</div>
     </div>
   )
 }

@@ -10,6 +10,21 @@
     flex-wrap: nowrap;
 }
 
+.bir {
+    color: black;
+    font-size: 18px;
+}
+
+.iki {
+    color: black;
+    font-size: 18px;
+}
+
+.uc {
+    color: black;
+    font-size: 18px;
+}
+
 .header-logo {
     color: red;
     font-size: 30px;

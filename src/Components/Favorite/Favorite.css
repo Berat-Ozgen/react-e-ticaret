@@ -73,3 +73,12 @@
     color: black;
     transition: all ease 0.3s;
 }
+
+.emptyList {
+    display: flex;
+    color: darkgreen;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    font-size: 42px;
+}
