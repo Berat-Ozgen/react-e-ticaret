@@ -33,7 +33,7 @@ const Header = () => {
 
             <div className='favorite'><Link to="favorite"> <span className='iki'><BsHeart/>  Favoriler</span>  </Link> </div>
 
-            <div className='sepet'> <Link to="/"> <span className='uc'><GrBasket/> Sepetim</span>  </Link></div> 
+            <div className='sepet'> <Link to="/sepet"> <span className='uc'><GrBasket/> Sepetim</span>  </Link></div> 
         </div>
     </div>
   )

@@ -5,6 +5,7 @@ import Home from './Components/Home/Home';
 import {useState,useEffect} from 'react';
 import axios from 'axios';
 import Favorite from './Components/Favorite/Favorite';
+import Basket from './Components/Basket/Basket';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
   const [searchValue, setSearchValue] = useState("")
   const [basket, setBasket] = useState([])
   const [favoriteList, setFavoriteList] = useState([])
+  const [cost,setCost] = useState("")
 
 
     const fecthData = async() => {
@@ -23,7 +25,9 @@ function App() {
 
     useEffect(()=> {
         fecthData()
-    }, [])
+        const totalPrice = basket.reduce((pre,basket) => pre +(basket.amount*basket.price),0);
+        setCost(totalPrice);
+    }, [basket])
 
     const data = {
       dataList,
@@ -37,7 +41,9 @@ function App() {
       basket,
       setBasket,
       favoriteList,
-      setFavoriteList
+      setFavoriteList,
+      cost,
+      setCost
 
     }
 
@@ -50,6 +56,8 @@ function App() {
       
         <Route index element={<Home/>}/>
         <Route path="favorite" element={<Favorite />}/>
+        <Route path="sepet" element={<Basket />}/>
+
 
       </Routes>
     </BrowserRouter>

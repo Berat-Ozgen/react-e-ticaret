@@ -1,0 +1,105 @@
+.basket-component {
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.basket-card {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 400px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    margin-top: 50px;
+}
+
+.basket-card-img {
+    width: 350px;
+    height: 250px;
+}
+
+.basket-card-img>img {
+    padding-left: 30px;
+    padding-top: 15px;
+    border-radius: 4px;
+    width: 370px;
+    height: 250px;
+}
+
+.basket-card-title {
+    padding-left: 4%;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    font-size: 24px;
+}
+
+.basket-card-price {
+    padding-left: 4%;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    font-size: 24px;
+}
+
+.basket-card-stock {
+    padding-left: 4%;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    font-size: 24px;
+}
+
+.basket-card-buttons {
+    position: relative;
+    top: 16%;
+    left: 20%;
+}
+
+.basket-card-buttons>button {
+    width: 240px;
+    height: 35px;
+    border: 1px solid green;
+    background-color: white;
+    color: black;
+    border-radius: 4px;
+}
+
+.basket-card-buttons>button:hover {
+    border: 2px solid green;
+    background-color: greenyellow;
+    color: black;
+    transition: all ease 0.3s;
+}
+
+.basket-card-adet {
+    padding-left: 4%;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    font-size: 24px;
+}
+
+.emptyList {
+    display: flex;
+    color: darkgreen;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    font-size: 42px;
+}
+
+.cost {
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 110px;
+    left: 30px;
+    width: 250px;
+    height: 75px;
+    font-size: 23px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
