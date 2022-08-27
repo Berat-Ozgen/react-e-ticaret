@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 
 import './List.css';
+import { Link } from 'react-router-dom';
 
 const List = () => {
 
@@ -67,6 +68,7 @@ const List = () => {
       <div className='list-component'>
       
       {dataList?.filter(data => data.title.toLowerCase().includes(searchValue)).map((item,idx) => (
+        <Link to={`${item.id}`}>
           <div key={idx} className='card'>
           <div className='card-sol'>
           <div className="card-img"><img src={item.images[1]} alt="image malesef yok" /></div>
@@ -78,10 +80,10 @@ const List = () => {
           <button onClick={() => favoriteAdd(item)}>Favorilere ekle</button>
           <button onClick={() => addBasket(item)}>sepete ekle</button>
           </div>
+         
           </div>
-
-      </div>
-      
+         
+      </div> </Link> 
       ))}
 
       

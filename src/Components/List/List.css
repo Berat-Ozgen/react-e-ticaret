@@ -6,6 +6,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    gap: 50px;
 }
 
 .list-component>div {
@@ -71,4 +72,8 @@
     width: 200px;
     height: 150px;
     padding: 10px;
+}
+
+a {
+    color: black;
 }

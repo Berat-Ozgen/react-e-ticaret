@@ -18,7 +18,7 @@ const Favorite = () => {
     if(favoriteList.length ===  0) {
       return (<div>
 
-          <Header/>
+          {/* <Header/> */}
 
           <div className='emptyList'> Şuanda Favoriler Kısmında birşey yok</div>
      
@@ -29,7 +29,7 @@ const Favorite = () => {
       
   return (
     <>
-        <Header/>
+        {/* <Header/> */}
         <div className='favorite-component'>
 
              {favoriteList.filter(data => data.name.includes(searchValue))?.map(item => (

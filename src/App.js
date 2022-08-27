@@ -7,6 +7,8 @@ import axios from 'axios';
 import Favorite from './Components/Favorite/Favorite';
 import Basket from './Components/Basket/Basket';
 import Login from './Components/Login/Login';
+import Header from './Components/Header/Header';
+import Detail from './Components/Detail/Detail';
 
 function App() {
 
@@ -55,6 +57,8 @@ function App() {
 
     <BrowserRouter>
 
+      <Header/>
+
       <Routes>
 
 
@@ -63,6 +67,7 @@ function App() {
         <Route path="sepet"  element={<Basket />}/>
         <Route path="favorite" element={<Favorite />}/>
         <Route path="login" element={<Login />}/>
+        <Route path=':id' element={<Detail/>} />
 
         
 

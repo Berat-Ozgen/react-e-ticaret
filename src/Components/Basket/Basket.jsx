@@ -32,7 +32,7 @@ const Basket = () => {
 
         return(
           <>
-                      <Header/>   
+                      {/* <Header/>    */}
 
             <div className='emptyList'> suanda sepetinizde bir urun yok</div>
           </>
@@ -46,7 +46,7 @@ const Basket = () => {
 
   return (
     <>
-        <Header/>   
+        {/* <Header/>    */}
 
         <div className='basket-component'>
 

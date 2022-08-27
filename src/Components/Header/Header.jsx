@@ -12,7 +12,7 @@ const Header = () => {
 
   const {dataList,setDataList,active,setActive,filterSelect,setFilterSelect,searchValue,setSearchValue} = useContext(mainContext)
 
-  console.log(searchValue)
+  
 
 
 
@@ -22,7 +22,7 @@ const Header = () => {
                 <div className='header-logo'>
                     E-MARKET
                 </div>
-              </Link>
+              </Link> 
 
         <div className="header-input">
             <input type="text" placeholder='aradıgınız ürün veya katolog' onChange={(e)=> setSearchValue(e.target.value)} />
