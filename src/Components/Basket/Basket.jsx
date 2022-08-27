@@ -1,7 +1,10 @@
 import React from 'react'
-import Header from '../Header/Header'
 import {mainContext,useContext} from '../../Context'
 import   './Basket.css'
+import Slider from "react-slick";
+
+
+
 
 const Basket = () => {
     const {dataList,setDataList,active,setActive,filterSelect,setFilterSelect,searchValue,setSearchValue,basket,setBasket,favoriteList,setFavoriteList,cost,setCost} = useContext(mainContext)
@@ -28,11 +31,44 @@ const Basket = () => {
       }
 
 
+      const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        cssEase: "linear"
+      };
+
+
+
+
       if (basket.length === 0) {
 
         return(
           <>
-                      {/* <Header/>    */}
+                 <div className='slider'>
+        <Slider {...settings}>
+          <div>
+              <img className='slider-img' src="https://dummyjson.com/image/i/products/1/4.jpg" alt="" />
+          </div>
+          <div>
+             <img className='slider-img' src="https://dummyjson.com/image/i/products/2/3.jpg" alt="" />
+          </div>
+          <div>
+             <img className='slider-img' src="https://dummyjson.com/image/i/products/7/1.jpg" alt="" />          </div>
+          <div>
+              <img className='slider-img' src="https://dummyjson.com/image/i/products/4/4.jpg" alt="" />          </div>
+          <div>
+              <img className='slider-img' src="https://dummyjson.com/image/i/products/5/2.jpg" alt="" />          </div>
+          <div>
+             <img className='slider-img' src="https://dummyjson.com/image/i/products/6/4.jpg" alt="" />            </div>
+        </Slider>
+      </div>
+
 
             <div className='emptyList'> suanda sepetinizde bir urun yok</div>
           </>
