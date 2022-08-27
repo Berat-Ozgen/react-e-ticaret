@@ -25,7 +25,7 @@ const Navbar = () => {
         <div onClick={()=> {
           setFilterSelect("laptops")
           setActive(3)
-        }} className={active === 3 && `active`}>Leptoplar</div>
+        }} className={active === 3 && `active`}>Leptop</div>
 
         <div onClick={()=> {
           setFilterSelect("fragrances")
