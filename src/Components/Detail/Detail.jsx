@@ -60,16 +60,3 @@ const Detail = () => {
 
 export default Detail
 
-{/* <div className='sol'>
-<div className="detail-img">
-    <img src="https://dummyjson.com/image/i/products/1/1.jpg" alt="" />
-</div>
-</div>
-<div className='sag'>
-<div className="detail-brand">Markası: samsung</div>
-<div className="detail-category">Türü: smartphones</div>
-<div className="detail-description">Serisi: iphone 10</div>
-<div className="detail-price">Fiyatı: 1000 $</div>
-<div className="detail-rating">Yıldızı 4.3</div>
-<div className="detail-stock">Stock: 100</div>
-</div> */}

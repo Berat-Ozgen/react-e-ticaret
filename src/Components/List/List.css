@@ -9,10 +9,6 @@
     gap: 50px;
 }
 
-.list-component>div {
-    margin: 50px;
-}
-
 .card {
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     border-radius: 1%;
@@ -46,11 +42,11 @@
     position: relative;
     font-size: 25px;
     top: 50px;
-    left: 80px;
+    left: 10px;
 }
 
 .card-buttons>button {
-    margin-left: 10px;
+    margin-left: 3px;
     height: 30px;
     border: 1px solid greenyellow;
     background-color: white;
@@ -59,7 +55,7 @@
 }
 
 .card-buttons>button:hover {
-    margin-left: 10px;
+    margin-right: 10px;
     height: 30px;
     border: 1px solid greenyellow;
     background-color: greenyellow;
@@ -76,4 +72,11 @@
 
 a {
     color: black;
+}
+
+.card-buttons>button>a:hover {
+    height: 30px;
+    background-color: greenyellow;
+    transition: all ease 0.3s;
+    color: white;
 }

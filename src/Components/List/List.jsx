@@ -68,7 +68,7 @@ const List = () => {
       <div className='list-component'>
       
       {dataList?.filter(data => data.title.toLowerCase().includes(searchValue)).map((item,idx) => (
-        <Link to={`${item.id}`}>
+        
           <div key={idx} className='card'>
           <div className='card-sol'>
           <div className="card-img"><img src={item.images[1]} alt="image malesef yok" /></div>
@@ -77,13 +77,14 @@ const List = () => {
           <div className='card-title-brand'> {item.title}</div>
           <div className='card-price'>Fiyat : {item.price}$</div>
           <div className="card-buttons">
+          <button> <Link to={`${item.id}`}> Ürünü incele </Link> </button>
           <button onClick={() => favoriteAdd(item)}>Favorilere ekle</button>
           <button onClick={() => addBasket(item)}>sepete ekle</button>
           </div>
          
           </div>
          
-      </div> </Link> 
+      </div> 
       ))}
 
       
