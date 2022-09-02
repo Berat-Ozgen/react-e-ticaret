@@ -62,3 +62,66 @@
 .header-buttons>div:hover {
     color: rgb(19, 121, 19);
 }
+
+@media only screen and (max-width: 1184px) {
+    body {
+        background-color: lightblue;
+    }
+    .header-logo {
+        padding-top: 10px;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    body {
+        background-color: lightblue;
+    }
+    .header-logo {
+        padding-top: 10px;
+        font-size: 18px;
+    }
+    .header-input>input {
+        width: 210px;
+        box-sizing: border-box;
+        outline: none;
+        transition: all ease 0.3s;
+        height: 50px;
+    }
+}
+
+@media only screen and (max-width: 606px) {
+    body {
+        background-color: lightblue;
+    }
+    .header-logo {
+        padding-top: 10px;
+        font-size: 13px;
+    }
+    .header-input>input {
+        width: 150px;
+        box-sizing: border-box;
+        outline: none;
+        transition: all ease 0.3s;
+        height: 50px;
+    }
+    .header-buttons>div {
+        margin: 10px;
+        width: 50px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+    }
+    .bir {
+        color: black;
+        font-size: 13px;
+    }
+    .iki {
+        color: black;
+        font-size: 13px;
+    }
+    .uc {
+        color: black;
+        font-size: 13px;
+    }
+}
