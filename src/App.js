@@ -6,7 +6,7 @@ import {useState,useEffect} from 'react';
 import axios from 'axios';
 import Favorite from './Components/Favorite/Favorite';
 import Basket from './Components/Basket/Basket';
-import Login from './Components/Login/Login';
+import Register from './Components/Login/Register';
 import Header from './Components/Header/Header';
 import Detail from './Components/Detail/Detail';
 
@@ -66,7 +66,7 @@ function App() {
         <Route index element={<Home/>}/>
         <Route path="sepet"  element={<Basket />}/>
         <Route path="favorite" element={<Favorite />}/>
-        <Route path="login" element={<Login />}/>
+        <Route path="register" element={<Register />}/>
         <Route path=':id' element={<Detail/>} />
 
         

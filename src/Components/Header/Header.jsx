@@ -29,11 +29,11 @@ const Header = () => {
         </div>
 
         <div className="header-buttons">
-           <div className='log-in'><Link to="login"> <span className='bir'><CgProfile/>  Log-in</span>  </Link> </div> 
+           <div className='register'><Link to="register"> <span className='bir'><CgProfile/>  kayıt-ol</span>  </Link> </div> 
 
             <div className='favorite'><Link to="favorite"> <span className='iki'><BsHeart/>  Favoriler</span>  </Link> </div>
 
-            <div className='sepet'> <Link to="/sepet"> <span className='uc'><GrBasket/> Sepetim</span>  </Link></div> 
+            <div className='sepet'> <Link to="sepet"> <span className='uc'><GrBasket/> Sepetim</span>  </Link></div> 
         </div>
     </div>
   )
