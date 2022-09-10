@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import {login} from '../../firebase';
 import {login as loginHandle} from '../../store/auth';
+import './Login.css'
 
 
 
@@ -17,11 +18,13 @@ const Login = () => {
     const handleSubmit = async (e) => {
       e.preventDefault()
       const user = await login(Lemail,Lpassword)
-      console.log(user)
-      dispatch(loginHandle(user))
-      navigate("/",{
-        replace: true
-      })
+      if (user) {
+          dispatch(loginHandle(user))
+          navigate("/",{
+          replace: true
+        })
+      }
+      
     }
   
 
@@ -32,8 +35,14 @@ const Login = () => {
           <div className="login-card">
                 <div className="login-card-header">Giriş yap</div>
                 <div className="login-card-username">Username: <input type="text" value={Lemail} onChange={(e) => setLEmail(e.target.value)} placeholder='ornek01@gmail.com'/></div>
-                <div className="login-card-passaword">Passaword: <input type="password" value={Lpassword}  onChange={(e) => setLPassword(e.target.value)} placeholder='******'/></div>
+                <div className="login-card-passaword">Password: <input type="password" value={Lpassword}  onChange={(e) => setLPassword(e.target.value)} placeholder='******'/></div>
+
+            <div className='buttons'>
                 <div className="login-card-button"><button>Giriş yap</button> </div>
+                <div onClick={() => navigate("/register")} className="login-card-button"><button>Kayıt ol</button> </div>
+            </div>
+              
+
             </div>
       </form>
     </div>  )

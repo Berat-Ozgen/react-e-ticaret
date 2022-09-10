@@ -1,16 +1,17 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import {mainContext,useContext} from '../../Context';
-import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-
+ import 'react-toastify/dist/ReactToastify.css';
 import './List.css';
 import { Link } from 'react-router-dom';
+import {useSelector} from 'react-redux'
+import toast, { Toaster } from 'react-hot-toast';
 
 const List = () => {
 
   const {dataList,setDataList,active,setActive,filterSelect,setFilterSelect,searchValue,setSearchValue,basket,setBasket,favoriteList,setFavoriteList} = useContext(mainContext)
 
+  const {user} = useSelector(state => state.auth)
 
 
   function addBasket(veri){
@@ -60,76 +61,61 @@ const List = () => {
   console.log(favoriteList)
 
 
+  const error = () => {
+    toast.error("Lütfen once giriş yapınız")
+  }
+
 
 
   if(filterSelect === ""){
 
     return (
       <div className='list-component'>
-      
-      {dataList?.filter(data => data.title.toLowerCase().includes(searchValue)).map((item,idx) => (
-        
-          <div key={idx} className='card'>
-          <div className='card-sol'>
-          <div className="card-img"><img src={item.images[1]} alt="image malesef yok" /></div>
-          </div>
-          <div className='card-sag'>
-          <div className='card-title-brand'> {item.title}</div>
-          <div className='card-price'>Fiyat : {item.price}$</div>
-          <div className="card-buttons">
-          <button> <Link to={`${item.id}`}> Ürünü incele </Link> </button>
-          <button onClick={() => favoriteAdd(item)}>Favorilere ekle</button>
-          <button onClick={() => addBasket(item)}>sepete ekle</button>
-          </div>
-         
-          </div>
-         
-      </div> 
+           <Toaster/>
+
+          {dataList?.filter(data => data.title.toLowerCase().includes(searchValue)).map((item,idx) => (
+            <div key={idx} className='card'>
+                  <div className='card-sol'>
+                     <div className="card-img"><img src={item.images[1]} alt="image malesef yok" /></div>
+                  </div>
+                  <div className='card-sag'>
+                    <div className='card-title-brand'> {item.title}</div>
+                    <div className='card-price'>Fiyat : {item.price}$</div>
+                    <div className="card-buttons">
+                      <button> <Link to={`${item.id}`}> Ürünü incele </Link> </button>
+                      <button onClick={user ? () => favoriteAdd(item) : error}>Favorilere ekle</button>
+                      <button onClick={user ? () => addBasket(item) : error}>sepete ekle</button>
+                   </div>
+                  </div>
+            </div> 
       ))}
 
-      
-
-        
     </div>
     )
-
-
   } else {
-
     return (
 
       <div className='list-component'>
-        
-      {dataList?.filter(data => data.category === filterSelect).map((item,idx) => (
-          <div key={idx} className='card'>
-          <div className='card-sol'>
-          <div className="card-img"><img src={item.images[1]} alt="image malesef yok" /></div>
-          </div>
-          <div className='card-sag'>
-          <div className='card-title-brand'> {item.title}</div>
-          <div className='card-price'>Fiyat : {item.price}$</div>
-          <div className="card-buttons">
-          <button onClick={() => favoriteAdd(item)}>Favorilere ekle</button>
-          <button onClick={() => addBasket(item)}>sepete ekle</button>
-          </div>
-          </div>
-  
+        <Toaster/>
+          {dataList?.filter(data => data.category === filterSelect).map((item,idx) => (
+              <div key={idx} className='card'>
+                  <div className='card-sol'>
+                       <div className="card-img"><img src={item.images[1]} alt="image malesef yok" /></div>
+                  </div>
+                  <div className='card-sag'>
+                      <div className='card-title-brand'> {item.title}</div>
+                      <div className='card-price'>Fiyat : {item.price}$</div>
+                      <div className="card-buttons">
+                          <button onClick={user ? () => favoriteAdd(item) : error}>Favorilere ekle</button>
+                          <button onClick={user ? () => addBasket(item) : error}>sepete ekle</button>
+                  </div>
+              </div>
       </div>
-      
       ))}
-  
-      
-  
-        
     </div> 
-     
     )
-
   }
-    
-
-  
 }
 
-export default List
+export default List 
 

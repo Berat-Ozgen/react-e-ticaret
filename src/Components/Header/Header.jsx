@@ -4,7 +4,7 @@ import {CgProfile} from 'react-icons/cg';
 import {BsHeart} from 'react-icons/bs';
 import {GrBasket} from 'react-icons/gr';
 import {useContext,mainContext} from '../../Context'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import {logout as logoutHandle} from '../../store/auth';
 
@@ -13,6 +13,9 @@ import {logout as logoutHandle} from '../../store/auth';
 
 const Header = () => {
 
+  const navigate = useNavigate()
+
+  
   const {dataList,setDataList,active,setActive,filterSelect,setFilterSelect,searchValue,setSearchValue} = useContext(mainContext)
 
   const {user} = useSelector(state => state.auth)
@@ -20,8 +23,8 @@ const Header = () => {
 
   const logoutClick = async() => {
        await logoutHandle()
-
        dispatch(logoutHandle())
+       navigate("/login")
 
   }
 
@@ -45,6 +48,7 @@ const Header = () => {
             <div className='favorite'><Link to="favorite"> <span className='iki'><BsHeart/>  Favoriler</span>  </Link> </div>
 
             <div className='sepet'> <Link to="sepet"> <span className='uc'><GrBasket/> Sepetim</span>  </Link></div> 
+
         </div>
     </div>
   )

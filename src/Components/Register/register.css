@@ -62,6 +62,16 @@
     border-radius: 4px;
 }
 
+.login-card {
+    margin-bottom: 130px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @media only screen and (max-width: 1400px) {
     .Login-component {
         display: flex;
@@ -92,7 +102,7 @@
     .login-card-username>input {
         width: 200px;
         height: 28px;
-        padding-left: 20px;
+        padding-left: 10px;
         opacity: 0.7;
     }
     .login-card-passaword {
@@ -102,7 +112,7 @@
     .login-card-passaword>input {
         width: 200px;
         height: 28px;
-        padding-left: 20px;
+        padding-left: 10px;
         opacity: 0.7;
     }
     .login-card-button {
@@ -115,6 +125,14 @@
         border: 1px solid greenyellow;
         background-color: darkturquoise;
         border-radius: 4px;
+    }
+    .login-card {
+        margin-bottom: 260px;
+    }
+    .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -148,7 +166,7 @@
     .login-card-username>input {
         width: 200px;
         height: 28px;
-        padding-left: 20px;
+        padding-left: 10px;
         opacity: 0.7;
     }
     .login-card-passaword {
@@ -171,5 +189,13 @@
         border: 1px solid greenyellow;
         background-color: darkturquoise;
         border-radius: 4px;
+    }
+    .login-card {
+        margin-bottom: 260px;
+    }
+    .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
