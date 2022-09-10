@@ -3,17 +3,23 @@ import { Link, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import {register} from '../../firebase';
 import './register.css';
+import { useDispatch } from 'react-redux';
 
 
 const Register = () => {
+
+
+
   const [Remail,setREmail] = useState("")
   const [Rpassword,setRPassword] = useState("")
   const navigate = useNavigate()
 
+
+
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     const user = await register(Remail,Rpassword)
-    console.log(user)
   }
 
 
