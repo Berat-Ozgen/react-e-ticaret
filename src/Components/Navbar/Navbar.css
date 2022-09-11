@@ -1,7 +1,7 @@
 .navbar-component {
     display: flex;
     width: 100%;
-    height: 65px;
+    height: 85px;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
@@ -11,8 +11,8 @@
 
 .navbar-component>div {
     margin-left: 90px;
-    font-size: 18px;
-    padding: 15px;
+    font-size: 15px;
+    padding: 8px;
 }
 
 .navbar-component>div:hover {
@@ -25,4 +25,60 @@
     color: orange !important;
     transform: scale(1.2);
     border-bottom: 3px solid greenyellow;
+}
+
+@media only screen and (max-width: 1184px) {
+    .navbar-component {
+        display: flex;
+        width: 100%;
+        height: 80px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+    }
+    .navbar-component>div {
+        margin-left: 90px;
+        font-size: 13px;
+        padding: 1px;
+    }
+    .navbar-component>div:hover {
+        color: black;
+        border-bottom: 3px solid greenyellow;
+    }
+    .active {
+        opacity: 1;
+        color: orange !important;
+        transform: scale(1.1);
+        border-bottom: 3px solid greenyellow;
+    }
+}
+
+@media only screen and (max-width: 974px) {
+    .navbar-component {
+        display: flex;
+        width: 100%;
+        height: 100px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+    }
+    .navbar-component>div {
+        margin-left: 40px;
+        font-size: 13px;
+        padding: 1px;
+    }
+    .navbar-component>div:hover {
+        color: black;
+        border-bottom: 3px solid greenyellow;
+    }
+    .active {
+        opacity: 1;
+        color: orange !important;
+        transform: scale(1.1);
+        border-bottom: 3px solid greenyellow;
+    }
 }

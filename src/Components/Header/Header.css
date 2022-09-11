@@ -64,29 +64,120 @@
 }
 
 @media only screen and (max-width: 1184px) {
-    body {
-        background-color: lightblue;
+    .header-component {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        background-color: aliceblue;
+        justify-content: space-evenly;
+        padding-top: 30px;
+        flex-wrap: nowrap;
+    }
+    .bir {
+        color: black;
+        font-size: 13px;
+    }
+    .iki {
+        color: black;
+        font-size: 13px;
+    }
+    .uc {
+        color: black;
+        font-size: 13px;
     }
     .header-logo {
-        padding-top: 10px;
+        margin-top: 15px;
+        color: red;
         font-size: 18px;
+    }
+    .header-input>input {
+        width: 230px;
+        padding: 10px 40px 10px 15px;
+        box-sizing: border-box;
+        outline: none;
+        transition: all ease 0.3s;
+        font-size: 14px;
+        color: #333;
+        background-color: #f3f3f3;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        height: 50px;
+    }
+    .header-buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .header-buttons>div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 70px;
+        height: 45px;
+        color: black;
+        font-size: 16px;
+        cursor: pointer;
     }
 }
 
 @media only screen and (max-width: 990px) {
-    body {
-        background-color: lightblue;
+    .header-component {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        background-color: aliceblue;
+        justify-content: space-evenly;
+        padding-top: 30px;
+        flex-wrap: nowrap;
+    }
+    .bir {
+        color: black;
+        font-size: 13px;
+    }
+    .iki {
+        color: black;
+        font-size: 13px;
+    }
+    .uc {
+        color: black;
+        font-size: 13px;
     }
     .header-logo {
-        padding-top: 10px;
+        margin-top: 8px;
+        color: red;
         font-size: 18px;
     }
     .header-input>input {
-        width: 210px;
+        width: 230px;
+        padding: 10px 40px 10px 15px;
         box-sizing: border-box;
         outline: none;
         transition: all ease 0.3s;
+        font-size: 14px;
+        color: #333;
+        background-color: #f3f3f3;
+        border: 2px solid transparent;
+        border-radius: 6px;
         height: 50px;
+    }
+    .header-buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .header-buttons>div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 70px;
+        height: 45px;
+        color: black;
+        font-size: 16px;
+        cursor: pointer;
     }
 }
 
