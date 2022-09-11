@@ -7,6 +7,7 @@ import {useContext,mainContext} from '../../Context'
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import {logout as logoutHandle} from '../../store/auth';
+import toast, { Toaster }  from 'react-hot-toast';
 
 
 
@@ -14,18 +15,29 @@ import {logout as logoutHandle} from '../../store/auth';
 const Header = () => {
 
   const navigate = useNavigate()
-
+  const {user} = useSelector(state => state.auth)
+  const dispatch = useDispatch()
   
   const {dataList,setDataList,active,setActive,filterSelect,setFilterSelect,searchValue,setSearchValue} = useContext(mainContext)
 
-  const {user} = useSelector(state => state.auth)
-  const dispatch = useDispatch()
+
 
   const logoutClick = async() => {
        await logoutHandle()
        dispatch(logoutHandle())
        navigate("/login")
+  }
 
+  const basketClick = () => {
+     navigate("/sepet")
+  }
+
+  const error = () => {
+    toast.error("Lütfen once giriş yapınız")
+  }
+
+  const favoriteClick = () => {
+    navigate("/favorite")
   }
 
 
@@ -45,9 +57,9 @@ const Header = () => {
         <div className="header-buttons">
            <div className='register' onClick={logoutClick} ><Link to="login"> <span className='bir'><CgProfile/> {user ? "çıkış-yap" : "giriş yap"} </span>  </Link> </div> 
 
-            <div className='favorite'><Link to="favorite"> <span className='iki'><BsHeart/>  Favoriler</span>  </Link> </div>
+            <div className='favorite' onClick={user ? favoriteClick : error} > <span className='iki'><BsHeart/>  Favoriler</span>  </div>
 
-            <div className='sepet'> <Link to="sepet"> <span className='uc'><GrBasket/> Sepetim</span>  </Link></div> 
+            <div className='sepet' onClick={user ? basketClick : error}> <span className='uc'><GrBasket/> Sepetim</span>  </div> 
 
         </div>
     </div>
