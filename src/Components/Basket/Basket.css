@@ -19,51 +19,53 @@
     width: 400px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     margin-top: 50px;
+    margin-left: 30px;
 }
 
 .basket-card-img {
-    width: 350px;
+    width: 100%;
     height: 250px;
+    text-align: center;
 }
 
 .basket-card-img>img {
-    padding-left: 30px;
     padding-top: 15px;
     border-radius: 4px;
-    width: 370px;
+    width: 90%;
     height: 250px;
 }
 
 .basket-card-title {
     padding-left: 4%;
-    padding-top: 30px;
-    padding-bottom: 10px;
-    font-size: 24px;
+    padding-top: 40px;
+    padding-bottom: 7px;
+    font-size: 23px;
 }
 
 .basket-card-price {
     padding-left: 4%;
     padding-top: 30px;
     padding-bottom: 10px;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .basket-card-stock {
     padding-left: 4%;
     padding-top: 30px;
     padding-bottom: 10px;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .basket-card-buttons {
-    position: relative;
-    top: 16%;
-    left: 20%;
+    padding-left: 30%;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    font-size: 20px;
 }
 
 .basket-card-buttons>button {
-    width: 240px;
-    height: 35px;
+    width: 150px;
+    height: 32px;
     border: 1px solid green;
     background-color: white;
     color: black;
@@ -74,14 +76,13 @@
     border: 2px solid green;
     background-color: greenyellow;
     color: black;
-    transition: all ease 0.3s;
 }
 
 .basket-card-adet {
     padding-left: 4%;
-    padding-top: 30px;
+    padding-top: 20px;
     padding-bottom: 10px;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .emptyList {
@@ -95,27 +96,21 @@
 
 .cost {
     display: flex;
-    flex-wrap: nowrap;
     position: absolute;
     align-items: center;
     justify-content: center;
     top: 110px;
     left: 30px;
-    width: 250px;
-    height: 75px;
-    font-size: 23px;
+    width: 230px;
+    height: 50px;
+    font-size: 20px;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
-.slider {
-    margin-top: 30px;
-    margin-left: 30%;
-    width: 600px;
-    height: 250px;
-    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
-}
-
-.slider-img {
-    width: 100%;
-    height: 250px;
+@media only screen and (max-width: 390px) {
+    .basket-card-buttons>button {
+        width: 100px;
+        height: 45px;
+        font-size: 13px;
+    }
 }
