@@ -16,43 +16,37 @@ const Favorite = () => {
     console.log(favoriteList.length)
 
     if(favoriteList.length ===  0) {
-      return (<div>
 
-          {/* <Header/> */}
+      return (
+      <div className='emptyList'>
+        <div > Şuanda Favoriler Kısmında birşey yok</div>
+      </div>
+       )
 
-          <div className='emptyList'> Şuanda Favoriler Kısmında birşey yok</div>
-     
+    }else {
 
-        </div>)
-    } else {
+        return (
+          <>
+              {/* <Header/> */}
+              <div className='favorite-component'>
 
-      
-  return (
-    <>
-        {/* <Header/> */}
-        <div className='favorite-component'>
-
-             {favoriteList.filter(data => data.name.includes(searchValue))?.map(item => (
-                   <div className="favorite-card">
-                   <div className="favorite-card-img"><img src={item.img[0]} alt="" /></div>
-                   <div className="favorite-card-title">iphone / {item.name}</div>
-                   <div className="favorite-card-price">Fiyat : {item.price} $</div>
-                   <div className="favorite-card-stock">Stock : 100 Adet</div>
-                   <div className="favorite-card-buttons">
-                       <button onClick={() => listDelete(item.id)}>Listeden Çıkar</button>
-                   </div>
-               </div>
-            ))}
-          
-        </div>
-        
-    </>
+                  {favoriteList.filter(data => data.name.includes(searchValue))?.map(item => (
+                        <div className="favorite-card">
+                        <div className="favorite-card-img"><img src={item.img[0]} alt="" /></div>
+                        <div className="favorite-card-title">iphone / {item.name}</div>
+                        <div className="favorite-card-price">Fiyat : {item.price} $</div>
+                        <div className="favorite-card-stock">Stock : 100 Adet</div>
+                        <div className="favorite-card-buttons">
+                            <button onClick={() => listDelete(item.id)}>Listeden Çıkar</button>
+                        </div>
+                    </div>
+                  ))}
+                
+              </div>
+          </>
   )
 
     }
-
-
-
 }
 
 export default Favorite

@@ -106,6 +106,7 @@ const List = () => {
                       <div className='card-title-brand'> {item.title}</div>
                       <div className='card-price'>Fiyat : {item.price}$</div>
                       <div className="card-buttons">
+                          <button> <Link to={`${item.id}`}> Ürünü incele </Link> </button>
                           <button onClick={user ? () => favoriteAdd(item) : error}>Favorilere ekle</button>
                           <button onClick={user ? () => addBasket(item) : error}>sepete ekle</button>
                   </div>
