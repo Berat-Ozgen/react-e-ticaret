@@ -13,7 +13,6 @@ import Login from './Components/Login/Login';
 
 function App() {
 
-  const [dataList, setDataList] = useState([])
   const [active, setActive] = useState(0)
   const [filterSelect, setFilterSelect] = useState("")
   const [searchValue, setSearchValue] = useState("")
@@ -22,20 +21,16 @@ function App() {
   const [cost,setCost] = useState("")
 
 
-    const fecthData = async() => {
-        await axios.get("https://dummyjson.com/products").then(res=> setDataList(res.data.products))
-    }
+
 
 
     useEffect(()=> {
-        fecthData()
         const totalPrice = basket.reduce((pre,basket) => pre +(basket.amount*basket.price),0);
         setCost(totalPrice);
     }, [basket])
 
     const data = {
-      dataList,
-      setDataList,
+
       active,
       setActive,
       filterSelect,

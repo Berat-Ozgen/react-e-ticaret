@@ -31,7 +31,7 @@ const Favorite = () => {
               <div className='favorite-component'>
 
                   {favoriteList.filter(data => data.name.includes(searchValue))?.map(item => (
-                        <div className="favorite-card">
+                        <div key={item.id} className="favorite-card">
                         <div className="favorite-card-img"><img src={item.img[0]} alt="" /></div>
                         <div className="favorite-card-title">iphone / {item.name}</div>
                         <div className="favorite-card-price">Fiyat : {item.price} $</div>

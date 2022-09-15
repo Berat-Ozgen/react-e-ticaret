@@ -4,14 +4,26 @@ import {mainContext,useContext} from '../../Context';
  import 'react-toastify/dist/ReactToastify.css';
 import './List.css';
 import { Link } from 'react-router-dom';
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import toast, { Toaster } from 'react-hot-toast';
+import {getItemData} from '../../store/fetchData'
+
 
 const List = () => {
 
-  const {dataList,setDataList,active,setActive,filterSelect,setFilterSelect,searchValue,setSearchValue,basket,setBasket,favoriteList,setFavoriteList} = useContext(mainContext)
+  const dispatch = useDispatch()
+
+  const {active,setActive,filterSelect,setFilterSelect,searchValue,setSearchValue,basket,setBasket,favoriteList,setFavoriteList} = useContext(mainContext)
 
   const {user} = useSelector(state => state.auth)
+  const productsList = useSelector(state => state.fetchData.productsList)
+
+  useEffect(() => {
+
+    dispatch(getItemData())
+
+
+  },[dispatch])
 
 
   function addBasket(veri){
@@ -58,7 +70,6 @@ const List = () => {
     
   }
 
-  console.log(favoriteList)
 
 
   const error = () => {
@@ -73,7 +84,7 @@ const List = () => {
       <div className='list-component'>
            <Toaster/>
 
-          {dataList?.filter(data => data.title.toLowerCase().includes(searchValue)).map((item,idx) => (
+          {productsList?.filter(data => data.title.toLowerCase().includes(searchValue)).map((item,idx) => (
             <div key={idx} className='card'>
                   <div className='card-sol'>
                      <div className="card-img"><img src={item.images[1]} alt="image malesef yok" /></div>
@@ -97,7 +108,7 @@ const List = () => {
 
       <div className='list-component'>
         <Toaster/>
-          {dataList?.filter(data => data.category === filterSelect).map((item,idx) => (
+          {productsList?.filter(data => data.category === filterSelect).map((item,idx) => (
               <div key={idx} className='card'>
                   <div className='card-sol'>
                        <div className="card-img"><img src={item.images[1]} alt="image malesef yok" /></div>
