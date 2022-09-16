@@ -2,7 +2,7 @@ import React from 'react'
 import {mainContext,useContext} from '../../Context'
 import   './Basket.css'
 import {useDispatch, useSelector} from 'react-redux'
-import {remove} from '../../store/basketHandle'
+import {basketRemove} from '../../store/basketHandle'
 
 
 
@@ -18,7 +18,7 @@ const Basket = () => {
     console.log(basketListItem)
 
     function removeBasket(veri){
-       dispatch(remove(veri))
+       dispatch(basketRemove(veri))
       }
 
 

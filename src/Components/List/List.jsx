@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux'
 import toast, { Toaster } from 'react-hot-toast';
 import {getItemData} from '../../store/fetchData'
-import {add} from '../../store/basketHandle'
+import {basketAdd} from '../../store/basketHandle'
+import {favoriteAdd} from '../../store/favoriteHandle';
 
 
 
@@ -20,7 +21,6 @@ const List = () => {
 
   const {user} = useSelector(state => state.auth)
   const {productsList} = useSelector(state => state.fetchData)
-  const {basketListItem} = useSelector(state => state.basketHandle)
 
 
 
@@ -29,32 +29,34 @@ const List = () => {
   },[dispatch])
 
 
+  
 
   function addBasket(veri){
-    dispatch(add(veri))
+    dispatch(basketAdd(veri))
   }
 
 
-  const favoriteAdd = (veri) => {
+  const addFavorite = (veri) => {
 
 
+    dispatch(favoriteAdd(veri))
 
-    const addFind = favoriteList.find(item => item.id === veri.id);
-    if(addFind) {
-      setFavoriteList([...favoriteList.filter(item => item.id !== veri.id),{
-        id : veri.id,
-        name: veri.title,
-        img : veri.images,
-        price  : veri.price,
-      }])
-    } else {
-      setFavoriteList([...favoriteList,{
-        id : veri.id,
-        name: veri.title,
-        price  : veri.price,
-        img : veri.images,
-      }])
-    }
+    // const addFind = favoriteList.find(item => item.id === veri.id);
+    // if(addFind) {
+    //   setFavoriteList([...favoriteList.filter(item => item.id !== veri.id),{
+    //     id : veri.id,
+    //     name: veri.title,
+    //     img : veri.images,
+    //     price  : veri.price,
+    //   }])
+    // } else {
+    //   setFavoriteList([...favoriteList,{
+    //     id : veri.id,
+    //     name: veri.title,
+    //     price  : veri.price,
+    //     img : veri.images,
+    //   }])
+    // }
     
   }
 
@@ -82,7 +84,7 @@ const List = () => {
                     <div className='card-price'>Fiyat : {item.price}$</div>
                     <div className="card-buttons">
                       <button> <Link to={`${item.id}`}> Ürünü incele </Link> </button>
-                      <button onClick={user ? () => favoriteAdd(item) : error}>Favorilere ekle</button>
+                      <button onClick={user ? () => addFavorite(item) : error}>Favorilere ekle</button>
                       <button onClick={user ? () => addBasket(item) : error}>sepete ekle</button>
                    </div>
                   </div>
@@ -106,7 +108,7 @@ const List = () => {
                       <div className='card-price'>Fiyat : {item.price}$</div>
                       <div className="card-buttons">
                           <button> <Link to={`${item.id}`}> Ürünü incele </Link> </button>
-                          <button onClick={user ? () => favoriteAdd(item) : error}>Favorilere ekle</button>
+                          <button onClick={user ? () => addFavorite(item) : error}>Favorilere ekle</button>
                           <button onClick={user ? () => addBasket(item) : error}>sepete ekle</button>
                   </div>
               </div>

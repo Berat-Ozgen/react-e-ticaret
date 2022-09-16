@@ -1,35 +1,37 @@
 import React from 'react'
 import {mainContext,useContext} from '../../Context'
 import './Favorite.css'
+import {favoriteRemove} from '../../store/favoriteHandle';
+import { useDispatch,useSelector } from 'react-redux';
+
+
 
 const Favorite = () => {
 
-    const {dataList,setDataList,active,setActive,filterSelect,setFilterSelect,searchValue,setSearchValue,basket,setBasket,favoriteList,setFavoriteList} = useContext(mainContext)
+    const dispatch = useDispatch()
+    const {favoriteListItem} = useSelector(state => state.favoriteHandle) 
+
+
+    const {searchValue} = useContext(mainContext)
 
 
 
     const listDelete = (id) => {
-            setFavoriteList([...favoriteList.filter(item => item.id !== id)])
+        dispatch(favoriteRemove(id))
     }
 
-    console.log(favoriteList.length)
 
-    if(favoriteList.length ===  0) {
-
+    if(favoriteListItem.length ===  0) {
       return (
       <div className='emptyList'>
         <div > Şuanda Favoriler Kısmında birşey yok</div>
       </div>
        )
-
     }else {
-
         return (
           <>
-              {/* <Header/> */}
               <div className='favorite-component'>
-
-                  {favoriteList.filter(data => data.name.includes(searchValue))?.map(item => (
+                  {favoriteListItem.filter(data => data.name.includes(searchValue))?.map(item => (
                         <div key={item.id} className="favorite-card">
                         <div className="favorite-card-img"><img src={item.img[0]} alt="" /></div>
                         <div className="favorite-card-title">iphone / {item.name}</div>
@@ -40,12 +42,9 @@ const Favorite = () => {
                         </div>
                     </div>
                   ))}
-                
               </div>
           </>
-  )
-
-    }
+  )}
 }
 
 export default Favorite
