@@ -7,13 +7,15 @@ export const getItemData = createAsyncThunk("dataItem/getDataItemAsync/", async(
 })
 
 const initialState = {
-    productsList: []
+    productsList: [],
+    deneme: []
 }
 
 const fetchData = createSlice({
     name: "products",
     initialState,
     reducers: {
+
 
     },
     extraReducers: {
@@ -23,6 +25,8 @@ const fetchData = createSlice({
     }
 
 })
+
+
 
 
 export default fetchData.reducer

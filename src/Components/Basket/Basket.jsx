@@ -1,39 +1,31 @@
 import React from 'react'
 import {mainContext,useContext} from '../../Context'
 import   './Basket.css'
+import {useDispatch, useSelector} from 'react-redux'
+import {remove} from '../../store/basketHandle'
+
 
 
 
 
 const Basket = () => {
-    const {dataList,setDataList,active,setActive,filterSelect,setFilterSelect,searchValue,setSearchValue,basket,setBasket,favoriteList,setFavoriteList,cost,setCost} = useContext(mainContext)
+    const {cost} = useContext(mainContext)
 
+    const dispatch = useDispatch()
+    const {basketListItem} = useSelector(state => state.basketHandle)
+
+
+    console.log(basketListItem)
 
     function removeBasket(veri){
-        const removeFind = basket.find(item => item.id === veri.id);
-        removeFind.amount -=1;
-        if(removeFind.amount === 0)
-        {
-          setBasket([...basket.filter(item => item.id !== veri.id)]);
-        }
-        else
-        {
-          setBasket([...basket.filter(item => item.id !== veri.id),
-          {
-            id : veri.id,
-            name: veri.name,
-            img : veri.img,
-            price  : veri.price,
-            amount : removeFind.amount
-          }])
-        }
+       dispatch(remove(veri))
       }
 
 
      
 
 
-      if (basket.length === 0) {
+      if (basketListItem.length === 0) {
         return(
           <>
             <div className='emptyList'> suanda sepetinizde bir urun yok</div>
@@ -45,7 +37,7 @@ const Basket = () => {
     <>
         <div className='basket-component'>
             <div className='cost'>Ödiceginiz Miktar: {cost}$</div>
-                {basket.map((item) => (
+                {basketListItem?.map((item) => (
                     <div key={item.id} className="basket-card">
                       <div className="top">
                         <div className="basket-card-img"><img src={item.img[0]} alt="" /></div>

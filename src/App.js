@@ -25,8 +25,8 @@ function App() {
 
 
     useEffect(()=> {
-        const totalPrice = basket.reduce((pre,basket) => pre +(basket.amount*basket.price),0);
-        setCost(totalPrice);
+        // const totalPrice = basket.reduce((pre,basket) => pre +(basket.amount*basket.price),0);
+        // setCost(totalPrice);
     }, [basket])
 
     const data = {

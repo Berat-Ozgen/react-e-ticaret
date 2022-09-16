@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux'
 import toast, { Toaster } from 'react-hot-toast';
 import {getItemData} from '../../store/fetchData'
+import {add} from '../../store/basketHandle'
+
+
 
 
 const List = () => {
@@ -16,40 +19,25 @@ const List = () => {
   const {active,setActive,filterSelect,setFilterSelect,searchValue,setSearchValue,basket,setBasket,favoriteList,setFavoriteList} = useContext(mainContext)
 
   const {user} = useSelector(state => state.auth)
-  const productsList = useSelector(state => state.fetchData.productsList)
+  const {productsList} = useSelector(state => state.fetchData)
+  const {basketListItem} = useSelector(state => state.basketHandle)
+
+
 
   useEffect(() => {
-
     dispatch(getItemData())
-
-
   },[dispatch])
 
 
+
   function addBasket(veri){
-    const addFind = basket.find(item => item.id === veri.id);
-    if(addFind) {
-      addFind.amount += 1;
-      setBasket([...basket.filter(item => item.id !== veri.id),{
-        id : veri.id,
-        name: veri.title,
-        img : veri.images,
-        price  : veri.price,
-        amount : addFind.amount
-      }])
-    } else {
-      setBasket([...basket,{
-        id : veri.id,
-        name: veri.title,
-        price  : veri.price,
-        img : veri.images,
-        amount : 1
-      }])
-    }
+    dispatch(add(veri))
   }
 
 
   const favoriteAdd = (veri) => {
+
+
 
     const addFind = favoriteList.find(item => item.id === veri.id);
     if(addFind) {

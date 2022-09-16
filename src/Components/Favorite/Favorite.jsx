@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../Header/Header'
 import {mainContext,useContext} from '../../Context'
 import './Favorite.css'
 
