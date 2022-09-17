@@ -17,10 +17,12 @@ const List = () => {
 
   const dispatch = useDispatch()
 
-  const {active,setActive,filterSelect,setFilterSelect,searchValue,setSearchValue,basket,setBasket,favoriteList,setFavoriteList} = useContext(mainContext)
+  const {filterSelect} = useContext(mainContext)
 
   const {user} = useSelector(state => state.auth)
   const {productsList} = useSelector(state => state.fetchData)
+  const {inpValue} = useSelector(state => state.inputValue)
+
 
 
 
@@ -37,27 +39,7 @@ const List = () => {
 
 
   const addFavorite = (veri) => {
-
-
     dispatch(favoriteAdd(veri))
-
-    // const addFind = favoriteList.find(item => item.id === veri.id);
-    // if(addFind) {
-    //   setFavoriteList([...favoriteList.filter(item => item.id !== veri.id),{
-    //     id : veri.id,
-    //     name: veri.title,
-    //     img : veri.images,
-    //     price  : veri.price,
-    //   }])
-    // } else {
-    //   setFavoriteList([...favoriteList,{
-    //     id : veri.id,
-    //     name: veri.title,
-    //     price  : veri.price,
-    //     img : veri.images,
-    //   }])
-    // }
-    
   }
 
 
@@ -69,12 +51,11 @@ const List = () => {
 
 
   if(filterSelect === ""){
-
     return (
       <div className='list-component'>
            <Toaster/>
 
-          {productsList?.filter(data => data.title.toLowerCase().includes(searchValue)).map((item,idx) => (
+          {productsList?.filter(data => data.title.toLowerCase().includes(inpValue)).map((item,idx) => (
             <div key={idx} className='card'>
                   <div className='card-sol'>
                      <div className="card-img"><img src={item.images[1]} alt="image malesef yok" /></div>

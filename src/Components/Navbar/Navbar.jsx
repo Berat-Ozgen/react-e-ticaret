@@ -1,11 +1,10 @@
-import { useState } from 'react'
 import {mainContext,useContext} from '../../Context';
 
 import './Navbar.css';
 
 const Navbar = () => {
 
-  const {active,setActive,filterSelect,setFilterSelect} = useContext(mainContext)
+  const {active,setActive,setFilterSelect} = useContext(mainContext)
    
 
 

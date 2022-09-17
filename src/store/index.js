@@ -3,6 +3,8 @@ import auth from './auth';
 import fetchData from './fetchData';
 import basketHandle from './basketHandle';
 import favoriteHandle from './favoriteHandle';
+import inputValue from './inputValue';
+
 
 
 
@@ -11,9 +13,8 @@ const store = configureStore({
         auth: auth,
         fetchData: fetchData,
         basketHandle: basketHandle,
-        favoriteHandle: favoriteHandle
-
-
+        favoriteHandle: favoriteHandle,
+        inputValue: inputValue
     }
 })
 

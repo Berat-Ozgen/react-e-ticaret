@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import {logout as logoutHandle} from '../../store/auth';
 import toast, { Toaster }  from 'react-hot-toast';
+import {value} from '../../store/inputValue';
 
 
 
@@ -16,9 +17,11 @@ const Header = () => {
 
   const navigate = useNavigate()
   const {user} = useSelector(state => state.auth)
+  const {inpValue} = useSelector(state => state.inputValue)
   const dispatch = useDispatch()
   
   const {dataList,setDataList,active,setActive,filterSelect,setFilterSelect,searchValue,setSearchValue} = useContext(mainContext)
+
 
 
 
@@ -40,6 +43,7 @@ const Header = () => {
     navigate("/favorite")
   }
 
+  console.log(inpValue)
 
 
   return (
@@ -51,7 +55,7 @@ const Header = () => {
               </Link> 
 
         <div className="header-input">
-            <input type="text" placeholder='aradıgınız ürün veya katolog' onChange={(e)=> setSearchValue(e.target.value)} />
+            <input type="text" placeholder='aradıgınız ürün veya katolog' onChange={(e)=> dispatch(value(e.target.value)) } />
         </div>
 
         <div className="header-buttons">
