@@ -4,6 +4,8 @@ import fetchData from './fetchData';
 import basketHandle from './basketHandle';
 import favoriteHandle from './favoriteHandle';
 import inputValue from './inputValue';
+import active from './active';
+
 
 
 
@@ -14,7 +16,9 @@ const store = configureStore({
         fetchData: fetchData,
         basketHandle: basketHandle,
         favoriteHandle: favoriteHandle,
-        inputValue: inputValue
+        inputValue: inputValue,
+        active: active,
+
     }
 })
 
