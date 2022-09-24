@@ -5,6 +5,7 @@ import basketHandle from './basketHandle';
 import favoriteHandle from './favoriteHandle';
 import inputValue from './inputValue';
 import active from './active';
+import filterSelect from './filterSelect'
 
 
 
@@ -18,6 +19,8 @@ const store = configureStore({
         favoriteHandle: favoriteHandle,
         inputValue: inputValue,
         active: active,
+        filterSelect: filterSelect
+
 
     }
 })

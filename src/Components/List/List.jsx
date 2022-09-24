@@ -1,6 +1,4 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import {mainContext,useContext} from '../../Context';
+import React, { useEffect } from 'react'
  import 'react-toastify/dist/ReactToastify.css';
 import './List.css';
 import { Link } from 'react-router-dom';
@@ -16,13 +14,15 @@ import {favoriteAdd} from '../../store/favoriteHandle';
 const List = () => {
 
   const dispatch = useDispatch()
+  const {select} = useSelector(state => state.filterSelect)
 
-  const {filterSelect} = useContext(mainContext)
+
 
   const {user} = useSelector(state => state.auth)
   const {productsList} = useSelector(state => state.fetchData)
   const {inpValue} = useSelector(state => state.inputValue)
 
+  console.log(select)
 
 
 
@@ -50,7 +50,7 @@ const List = () => {
 
 
 
-  if(filterSelect === ""){
+  if(select === ""){
     return (
       <div className='list-component'>
            <Toaster/>
@@ -79,7 +79,7 @@ const List = () => {
 
       <div className='list-component'>
         <Toaster/>
-          {productsList?.filter(data => data.category === filterSelect).map((item,idx) => (
+          {productsList?.filter(data => data.category === select).map((item,idx) => (
               <div key={idx} className='card'>
                   <div className='card-sol'>
                        <div className="card-img"><img src={item.images[1]} alt="image malesef yok" /></div>

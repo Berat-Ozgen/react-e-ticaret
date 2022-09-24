@@ -3,11 +3,10 @@ import './Header.css';
 import {CgProfile} from 'react-icons/cg';
 import {BsHeart} from 'react-icons/bs';
 import {GrBasket} from 'react-icons/gr';
-import {useContext,mainContext} from '../../Context'
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import {logout as logoutHandle} from '../../store/auth';
-import toast, { Toaster }  from 'react-hot-toast';
+import toast  from 'react-hot-toast';
 import {value} from '../../store/inputValue';
 
 
@@ -20,7 +19,6 @@ const Header = () => {
   const {inpValue} = useSelector(state => state.inputValue)
   const dispatch = useDispatch()
   
-  const {dataList,setDataList,active,setActive,filterSelect,setFilterSelect,searchValue,setSearchValue} = useContext(mainContext)
 
 
 

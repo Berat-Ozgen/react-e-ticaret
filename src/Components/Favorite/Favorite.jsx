@@ -30,7 +30,7 @@ const Favorite = () => {
                 <div className="favorite-card-img">
                   <img src={item.img[0]} alt="" />
                 </div>
-                <div className="favorite-card-title">iphone / {item.name}</div>
+                <div className="favorite-card-title">  {item.name}</div>
                 <div className="favorite-card-price">
                   Fiyat : {item.price} $
                 </div>
