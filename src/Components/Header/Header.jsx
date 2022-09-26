@@ -41,7 +41,6 @@ const Header = () => {
     navigate("/favorite")
   }
 
-  console.log(inpValue)
 
 
   return (

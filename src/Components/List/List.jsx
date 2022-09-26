@@ -22,7 +22,6 @@ const List = () => {
   const {productsList} = useSelector(state => state.fetchData)
   const {inpValue} = useSelector(state => state.inputValue)
 
-  console.log(select)
 
 
 
@@ -48,14 +47,19 @@ const List = () => {
     toast.error("Lütfen once giriş yapınız")
   }
 
+    const selectDataFilter = productsList?.filter(data => data.category === select).filter(data => data.title.includes(inpValue));
+
+    const dataFilterSearch = productsList?.filter(data => data.title.toLowerCase().includes(inpValue));
+
+
+
 
 
   if(select === ""){
     return (
       <div className='list-component'>
            <Toaster/>
-
-          {productsList?.filter(data => data.title.toLowerCase().includes(inpValue)).map((item,idx) => (
+          {dataFilterSearch.map((item,idx) => (
             <div key={idx} className='card'>
                   <div className='card-sol'>
                      <div className="card-img"><img src={item.images[1]} alt="image malesef yok" /></div>
@@ -71,15 +75,13 @@ const List = () => {
                   </div>
             </div> 
       ))}
-
     </div>
     )
   } else {
     return (
-
       <div className='list-component'>
         <Toaster/>
-          {productsList?.filter(data => data.category === select).map((item,idx) => (
+          {selectDataFilter?.map((item,idx) => (
               <div key={idx} className='card'>
                   <div className='card-sol'>
                        <div className="card-img"><img src={item.images[1]} alt="image malesef yok" /></div>
