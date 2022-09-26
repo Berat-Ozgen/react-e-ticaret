@@ -46,12 +46,12 @@ const Header = () => {
   return (
     <div className='header-component'>
               <Link to="/">
-                <div className='header-logo'>
-                    E-MARKET
-                </div>
+                <div className='header-logo'> 
+                    MARKET
+                 </div> 
               </Link> 
-
-        <div className="header-input">
+         <div className="header-input">
+    
             <input type="text" placeholder='aradıgınız ürün veya katolog' onChange={(e)=> dispatch(value(e.target.value)) } />
         </div>
 

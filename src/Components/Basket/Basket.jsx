@@ -27,9 +27,11 @@ const Basket = () => {
 
       if (basketListItem.length === 0) {
         return(
-          <>
-            <div className='emptyList'> suanda sepetinizde bir urun yok</div>
-          </>
+            <div className='emptyList'> 
+                <div>
+                   suanda sepetinizde bir urun yok
+                </div>
+            </div>
         )
       }
 

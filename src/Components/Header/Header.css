@@ -1,47 +1,50 @@
 .header-component {
     box-sizing: border-box;
     width: 100%;
-    height: 100px;
+    height: 100%;
     display: flex;
-    flex-direction: row;
     background-color: aliceblue;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding-top: 30px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ccc;
 }
 
-.bir {
-    color: black;
-    font-size: 18px;
-}
-
-.iki {
-    color: black;
-    font-size: 18px;
-}
-
-.uc {
+.header-buttons>div>span {
     color: black;
     font-size: 18px;
 }
 
 .header-logo {
+    width: 150px;
+    background-color: black;
+    text-align: center;
     color: red;
-    font-size: 24px;
+    font-size: 32px;
 }
 
 .header-input>input {
-    width: 598px;
+    width: 480px;
+    margin-top: 17px;
+    opacity: 0.7;
+    text-align: center;
     padding: 10px 40px 10px 15px;
     box-sizing: border-box;
     outline: none;
     transition: all ease 0.3s;
     font-size: 14px;
     color: #333;
-    background-color: #f3f3f3;
-    border: 2px solid transparent;
-    border-radius: 6px;
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
     height: 50px;
+}
+
+.header-input>input:focus {
+    border-bottom: 1px solid #aaa;
+    opacity: 1;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
 }
 
 .header-buttons {
@@ -51,168 +54,11 @@
 }
 
 .header-buttons>div {
-    margin: 15px;
+    margin-top: 40px;
+    margin-left: 20px;
     width: 90px;
-    height: 45px;
+    height: 70px;
     color: black;
     font-size: 16px;
     cursor: pointer;
-}
-
-.header-buttons>div:hover {
-    color: rgb(19, 121, 19);
-}
-
-@media only screen and (max-width: 1184px) {
-    .header-component {
-        box-sizing: border-box;
-        width: 100%;
-        height: 100px;
-        display: flex;
-        flex-direction: row;
-        background-color: aliceblue;
-        justify-content: space-evenly;
-        padding-top: 30px;
-        flex-wrap: nowrap;
-    }
-    .bir {
-        color: black;
-        font-size: 13px;
-    }
-    .iki {
-        color: black;
-        font-size: 13px;
-    }
-    .uc {
-        color: black;
-        font-size: 13px;
-    }
-    .header-logo {
-        margin-top: 15px;
-        color: red;
-        font-size: 18px;
-    }
-    .header-input>input {
-        width: 230px;
-        padding: 10px 40px 10px 15px;
-        box-sizing: border-box;
-        outline: none;
-        transition: all ease 0.3s;
-        font-size: 14px;
-        color: #333;
-        background-color: #f3f3f3;
-        border: 2px solid transparent;
-        border-radius: 6px;
-        height: 50px;
-    }
-    .header-buttons {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-    }
-    .header-buttons>div {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 70px;
-        height: 45px;
-        color: black;
-        font-size: 16px;
-        cursor: pointer;
-    }
-}
-
-@media only screen and (max-width: 990px) {
-    .header-component {
-        box-sizing: border-box;
-        width: 100%;
-        height: 100px;
-        display: flex;
-        flex-direction: row;
-        background-color: aliceblue;
-        justify-content: space-evenly;
-        padding-top: 30px;
-        flex-wrap: nowrap;
-    }
-    .bir {
-        color: black;
-        font-size: 13px;
-    }
-    .iki {
-        color: black;
-        font-size: 13px;
-    }
-    .uc {
-        color: black;
-        font-size: 13px;
-    }
-    .header-logo {
-        margin-top: 8px;
-        color: red;
-        font-size: 18px;
-    }
-    .header-input>input {
-        width: 230px;
-        padding: 10px 40px 10px 15px;
-        box-sizing: border-box;
-        outline: none;
-        transition: all ease 0.3s;
-        font-size: 14px;
-        color: #333;
-        background-color: #f3f3f3;
-        border: 2px solid transparent;
-        border-radius: 6px;
-        height: 50px;
-    }
-    .header-buttons {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-    }
-    .header-buttons>div {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 70px;
-        height: 45px;
-        color: black;
-        font-size: 16px;
-        cursor: pointer;
-    }
-}
-
-@media only screen and (max-width: 606px) {
-    body {
-        background-color: lightblue;
-    }
-    .header-logo {
-        padding-top: 10px;
-        font-size: 13px;
-    }
-    .header-input>input {
-        width: 150px;
-        box-sizing: border-box;
-        outline: none;
-        transition: all ease 0.3s;
-        height: 50px;
-    }
-    .header-buttons>div {
-        margin: 10px;
-        width: 50px;
-        height: 45px;
-        color: black;
-        cursor: pointer;
-    }
-    .bir {
-        color: black;
-        font-size: 13px;
-    }
-    .iki {
-        color: black;
-        font-size: 13px;
-    }
-    .uc {
-        color: black;
-        font-size: 13px;
-    }
 }

@@ -12,6 +12,7 @@ const Favorite = () => {
   const listDelete = (id) => {
     dispatch(favoriteRemove(id));
   };
+  
 
   if (favoriteListItem.length === 0) {
     return (
