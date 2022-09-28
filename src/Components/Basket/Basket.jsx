@@ -13,9 +13,11 @@ const Basket = () => {
 
     const dispatch = useDispatch()
     const {basketListItem} = useSelector(state => state.basketHandle)
+    const {totalConst} = useSelector(state => state.basketHandle)
 
 
-    console.log(basketListItem)
+
+    console.log(totalConst)
 
     function removeBasket(veri){
        dispatch(basketRemove(veri))
@@ -23,11 +25,12 @@ const Basket = () => {
 
 
      
-
+      
 
       if (basketListItem.length === 0) {
         return(
             <div className='emptyList'> 
+
                 <div>
                    suanda sepetinizde bir urun yok
                 </div>
@@ -37,8 +40,8 @@ const Basket = () => {
 
   return (
     <>
+      <div className='cost'>Ödiceginiz Miktar: {cost}$</div>
         <div className='basket-component'>
-            <div className='cost'>Ödiceginiz Miktar: {cost}$</div>
                 {basketListItem?.map((item) => (
                     <div key={item.id} className="basket-card">
                       <div className="top">

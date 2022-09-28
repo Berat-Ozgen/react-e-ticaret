@@ -32,12 +32,12 @@ const Detail = () => {
                   </div>
                </div>
                <div className='sag'>
-                  <div className="detail-brand">Markası: {item.brand}</div>
-                  <div className="detail-category">Türü: {item.category}</div>
-                  <div className="detail-description">Serisi: {item.description}</div>
-                  <div className="detail-price">Fiyatı: {item.price} $</div>
-                  <div className="detail-rating">Yıldızı: {item.rating}</div>
-                  <div className="detail-stock">Stock: {item.stock}</div>
+                  <div className="detail-brand"> <span>Markası</span> : {item.brand}</div>
+                  <div className="detail-category"><span>Türü</span>: {item.category}</div>
+                  <div className="detail-description"><span>Serisi</span>: {item.description}</div>
+                  <div className="detail-price"><span>Fiyatı</span>: {item.price} $</div>
+                  <div className="detail-rating"><span>Yıldızı</span>: {item.rating}</div>
+                  <div className="detail-stock"><span>Stock</span>: {item.stock}</div>
                </div>
                
          </div>

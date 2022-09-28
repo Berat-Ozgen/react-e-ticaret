@@ -4,6 +4,7 @@ import { verifyBeforeUpdateEmail } from 'firebase/auth';
 
 const initialState = {
     basketListItem: [],
+    totalCost: 0
 
 }
 
@@ -48,13 +49,17 @@ const basketHandle = createSlice({
                 }]
             }
 
+        },
+        cost: (state, action) => {
+            const totalPrice = state.basketListItem.reduce((pre, basket) => pre + (basket.amount * basket.price), 0);
+            state.totalCost = totalPrice
         }
 
 
     }
 })
 
-export const { basketAdd, basketRemove } = basketHandle.actions
+export const { basketAdd, basketRemove, cost } = basketHandle.actions
 
 
 export default basketHandle.reducer
